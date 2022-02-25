@@ -1,7 +1,229 @@
+// Файл обнуляющих стилей
+@import "nullstyle.scss";
+
+body {
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+}
 .wrapper {
     min-height: 100vh;
     overflow: hidden;
+	background-color: #f6f6f6;
+	position: relative;
+	&::before {
+		content: "";
+		display: block;
+		position: absolute;
+		height: 66%;
+		right: -200px;
+		bottom: 62%;
+		left: -200px;
+		border-radius: 50%;
+		background: #3b4256;
+	}
+
+
 }
 .container{
-    
+    max-width: 375px;
+    margin: 0 auto;
+}
+.content {
+	padding: 35px 0 0 0;
+}
+.header {
+	position: relative;
+		&__image {
+			margin: 0 0 0 10px;
+			width: 60px;
+			height: 60px;
+			border-radius: 50%;
+			background: url('../img/logo.jpg') center no-repeat;
+			background-size: cover;
+			display: inline-block;
+			border: 0.5px solid #000;
+		}
+		&__role {
+			display: inline-block;
+			position: absolute;
+			top: 0px;
+			left: 80px;
+			p:first-child {
+				font-weight: 700;
+				font-size: 20px;
+				line-height: 26px;
+				color: #fefefe;
+			}
+			p:nth-child(2) {
+				color: #969aa5;
+			}
+		}
+		&__text {
+			margin: 10px 0 15px 0;
+			padding: 12px 5px 0 0;
+			border-top: 1.5px solid #9598a3;
+			position: relative;
+			p:first-child {
+				color: #fefefe;
+				padding: 0 0 0 20px;
+				margin: 0 0 10px 0;
+				&:before {
+					content: '';
+					width: 8px;
+					height: 8px;
+					border-radius: 50%;
+					background-color: #f83e56;
+					display: inline-block;
+					margin: 0 5px 0 0;
+					position: absolute;
+					left: 5px;
+					top: 16px;
+				}
+			}
+			p:nth-child(2) {
+				color: #969aa5;
+				padding: 0 0 0 5px;
+			}
+		}
+}
+.main {		
+		position: relative;
+		z-index: 1;
+		&__modal {
+			background-color: #fff;
+			border-radius: 15px;
+			padding: 20px 22px 50px;
+		}
+		&__title {
+			font-size: 24px;
+			font-weight: 700;
+			text-align: center;
+			margin: 0 0 10px 0;
+			color: #3c4357;
+		}
+		&__list {}
+		&__row {}
+		&__item {
+            margin: 30px 0 25px 0;
+        }
+		&__input {
+			textarea {
+				width: 100%;
+				border: none;
+				resize: none;
+				font-size: 14px;
+				color: #777c88;
+				outline: 0;
+				border-radius: 0;
+				min-height: 28px; 
+				resize: none;
+				overflow: hidden;
+			}
+			border-bottom: 1px solid #f93f56;
+		}
+		&__buttons {
+            margin: 25px 40px;
+        }
+		&__buttons-row {
+            display: flex;
+            justify-content: space-between;
+        }
+		&__video {
+            width: 60px;
+            height: 60px;
+            background: url('/./img/video.svg') center no-repeat;
+            overflow: hidden;
+			border: 1px solid #f93f56;
+			border-radius: 5px;
+			cursor: pointer;
+            input {
+				font-size: 0;
+                opacity: 0;
+                width: 100%;
+                height: 100%;
+				cursor: pointer;
+            }
+        }
+		&__send {
+			flex: 0 1 200px;
+			margin: 0 5px 0 5px;
+			button {				
+				display: block;
+				width: 100%;
+				height: 56px;
+				line-height: 56px;
+				background: 0 0;
+				border: none;
+				cursor: pointer;
+				position: relative;
+				text-decoration: none;
+				color: #fff;
+				font-weight: 500;
+				border-radius: 7px;
+				font-size: 14px;
+				text-align: center;
+				letter-spacing: .5px;
+				background-image: linear-gradient(to left,#f93e56 0,#fe6561 100%);
+				box-shadow: 0 2px 6px 0 rgb(50 50 50 / 16%);
+				&::before {
+					content: '';
+					position: absolute;
+					display: block;
+					width: 30px;
+					height: 30px;
+					top: 50%;
+					transform: translateY(-50%);
+					right: 16px;
+					background-image: url('/img/arrow.svg');
+					background-size: 30px;
+					background-repeat: no-repeat;
+					background-position: 50% 50%;
+				}
+			}
+		}
+		&__text {
+			color: #8e929b;
+			display: inline-block;
+			font-size: 10px;
+			display: flex;
+			justify-content: right;
+			p{
+				width: 200px;	
+			}
+		}
+}
+.item {
+
+		&__row {
+			display: flex;
+			justify-content: space-around;
+		}
+		&__star {
+			width: 65px;
+			path.gray{
+				fill: #e6e7ea;
+			}
+			path.red{
+				fill: #f93e56;
+			}
+		}
+		&__text {
+			color: #8e929b;
+			text-align: center;
+			margin: 4px 0 0 0;
+			
+		}
+}
+.footer {
+		color: #8e929b;
+		height: 50px;
+		border-top: 1px solid #eaebec;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		&__text {
+			span {
+				font-size: 10px;
+				text-decoration: underline;
+			}
+		}
 }
