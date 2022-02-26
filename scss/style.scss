@@ -41,7 +41,7 @@ body {
 .container{
     max-width: 375px;
     margin: 0 auto;
-	flex: 1 1 auto;
+	flex: 0 1 auto;
 }
 .content {
 	padding: 31.5px 0 0 0;
@@ -117,6 +117,8 @@ body {
 }
 .main {		
 		position: relative;
+		top: 0;
+		left: 0;
 		z-index: 1;
 		max-width: 345.6px;
 		// box-shadow: 0 0 11px 0 rgb(50 50 50 / 16%);
@@ -165,7 +167,8 @@ body {
 		&__video {
             width: 60px;
             height: 60px;
-            background: url('/./img/video.svg') center no-repeat;
+            background: url('../img/camera.svg') center no-repeat;
+			background-size: 40px 40px;
             overflow: hidden;
 			border: 1px solid $primary-color;
 			border-radius: 5px;
@@ -215,7 +218,7 @@ body {
 					// top: 50%;
 					transform: translateY(2.5px);
 					left: 16px;
-					background-image: url('/img/send.svg');
+					background-image: url('../img/send.svg');
 					// background-size: 30px;
 					// background-repeat: no-repeat;
 					// background-position: 50% 50%;
@@ -227,10 +230,11 @@ body {
 			// display: inline-block;
 			font-size: 10px;
 			display: flex;
-			justify-content: right;
-			margin: 4px -2.5px 0 0;
-			p{
-				max-width: 200px;	
+			
+			justify-content: flex-end;
+			margin: 4px 0 0 0;
+			p{	
+				max-width: 200px;			
 				a {
 					color: #8e929b;
 					text-decoration: underline;
@@ -274,12 +278,26 @@ body {
 		align-items: center;
 		&__text {
 			a {
-				color: #8e929b;
+				display: block;
+				color: #8e929b;				
+				display: flex;
+				align-items: center;
+				justify-content: center;
 			}
 			span {
-				font-size: 10px;
+				font-size: 12px;
 				text-decoration: underline;
 				color: #8e929b;
+				
+			}
+			img {
+				align-self: end;
+				// background-color: red;
+				fill: $primary-color;
+				height: 12px;
+				margin-left: 6px;
+				// transform: translateY(3px);
 			}
 		}
+
 }
