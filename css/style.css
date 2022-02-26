@@ -74,7 +74,10 @@ h1, h2, h3, h4, h5, h6 {
 
 /*--------------------*/
 body {
-  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+  font-family: Roboto, sans-serif;
+  letter-spacing: 0.2px;
+  color: #777c88;
+  font-size: 14px;
 }
 
 .wrapper {
@@ -82,66 +85,95 @@ body {
   overflow: hidden;
   background-color: #f6f6f6;
   position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 .wrapper::before {
   content: "";
   display: block;
   position: absolute;
-  height: 66%;
-  right: -200px;
-  bottom: 62%;
-  left: -200px;
+  height: 260px;
+  width: 200%;
+  top: 0;
+  left: -50%;
   border-radius: 50%;
+  background: #3b4256;
+}
+.wrapper::after {
+  content: "";
+  display: block;
+  position: absolute;
+  height: 100px;
+  width: 100%;
+  top: 0;
+  left: 0;
   background: #3b4256;
 }
 
 .container {
   max-width: 375px;
   margin: 0 auto;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
 }
 
 .content {
-  padding: 35px 0 0 0;
+  padding: 31.5px 0 0 0;
 }
 
 .header {
   position: relative;
+  z-index: 1;
 }
 .header__image {
-  margin: 0 0 0 10px;
-  width: 60px;
-  height: 60px;
+  margin: 0 0 0 14px;
+  width: 56px;
+  height: 56px;
   border-radius: 50%;
   background: url("../img/logo.jpg") center no-repeat;
   background-size: cover;
   display: inline-block;
-  border: 0.5px solid #000;
 }
 .header__role {
   display: inline-block;
   position: absolute;
-  top: 0px;
-  left: 80px;
+  top: -2px;
+  left: 85px;
 }
 .header__role p:first-child {
+  font-size: 18px;
   font-weight: 700;
-  font-size: 20px;
   line-height: 26px;
-  color: #fefefe;
+  color: #fff;
 }
 .header__role p:nth-child(2) {
-  color: #969aa5;
+  font-size: 12px;
+  opacity: 0.5;
+  color: #fff;
+}
+.header__line {
+  margin: 0 0 0 14px;
+  padding-top: 14px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+  max-width: 345.6px;
 }
 .header__text {
-  margin: 10px 0 15px 0;
+  margin: 3.5px 0 17px 9px;
   padding: 12px 5px 0 0;
-  border-top: 1.5px solid #9598a3;
+  max-width: 345.6px;
   position: relative;
 }
 .header__text p:first-child {
   color: #fefefe;
   padding: 0 0 0 20px;
-  margin: 0 0 10px 0;
+  margin: 0 0 16px 0;
+  line-height: 16px;
 }
 .header__text p:first-child:before {
   content: "";
@@ -156,18 +188,24 @@ body {
   top: 16px;
 }
 .header__text p:nth-child(2) {
-  color: #969aa5;
+  font-size: 12px;
+  color: #fff;
+  opacity: 0.5;
   padding: 0 0 0 5px;
 }
 
 .main {
   position: relative;
   z-index: 1;
+  max-width: 345.6px;
+  margin: 0 auto;
 }
 .main__modal {
+  -webkit-box-shadow: 0 0 11px 0 rgba(50, 50, 50, 0.16);
+          box-shadow: 0 0 11px 0 rgba(50, 50, 50, 0.16);
   background-color: #fff;
   border-radius: 15px;
-  padding: 20px 22px 50px;
+  padding: 25px 22px 50px;
 }
 .main__title {
   font-size: 24px;
@@ -177,10 +215,11 @@ body {
   color: #3c4357;
 }
 .main__item {
-  margin: 30px 0 25px 0;
+  margin: 45px 0 25px 0;
 }
 .main__input {
   border-bottom: 1px solid #f93f56;
+  margin: 0 0 14px 0;
 }
 .main__input textarea {
   width: 100%;
@@ -265,7 +304,6 @@ body {
 }
 .main__text {
   color: #8e929b;
-  display: inline-block;
   font-size: 10px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -273,9 +311,14 @@ body {
   -webkit-box-pack: right;
       -ms-flex-pack: right;
           justify-content: right;
+  margin: 4px -2.5px 0 0;
 }
 .main__text p {
-  width: 200px;
+  max-width: 200px;
+}
+.main__text p a {
+  color: #8e929b;
+  text-decoration: underline;
 }
 
 .item__row {
@@ -286,7 +329,10 @@ body {
       justify-content: space-around;
 }
 .item__star {
-  width: 65px;
+  width: 55px;
+}
+.item__star path {
+  cursor: pointer;
 }
 .item__star path.gray {
   fill: #e6e7ea;
@@ -298,11 +344,14 @@ body {
   color: #8e929b;
   text-align: center;
   margin: 4px 0 0 0;
+  font-size: 12px;
 }
 
 .footer {
+  width: 345.6px;
+  margin: 0 auto;
   color: #8e929b;
-  height: 50px;
+  height: 80px;
   border-top: 1px solid #eaebec;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -314,7 +363,11 @@ body {
       -ms-flex-align: center;
           align-items: center;
 }
+.footer__text a {
+  color: #8e929b;
+}
 .footer__text span {
   font-size: 10px;
   text-decoration: underline;
+  color: #8e929b;
 }

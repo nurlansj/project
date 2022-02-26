@@ -1,6 +1,7 @@
 // Файл обнуляющих стилей
 @import "nullstyle.scss";
-
+$primary-color: #3dc76f;
+$hover-color: #00AF80;
 body {
 	font-family: Roboto,sans-serif;
 	letter-spacing: .2px;
@@ -24,7 +25,7 @@ body {
 		top: 0;
 		left: -50%;
 		border-radius: 50%;
-		background: #3b4256;
+		background: $primary-color;
 	}
 	&::after {
 		content: "";
@@ -34,7 +35,7 @@ body {
 		width: 100%;
 		top: 0;
 		left: 0;
-		background: #3b4256;
+		background: $primary-color;
 	}
 }
 .container{
@@ -151,11 +152,11 @@ body {
 				resize: none;
 				overflow: hidden;			
 			}
-			border-bottom: 1px solid #f93f56;
+			border-bottom: 1px solid $primary-color;
 			margin: 0 0 14px 0;
 		}
 		&__buttons {
-            margin: 25px 40px;
+            margin: 25px 0;
         }
 		&__buttons-row {
             display: flex;
@@ -166,7 +167,7 @@ body {
             height: 60px;
             background: url('/./img/video.svg') center no-repeat;
             overflow: hidden;
-			border: 1px solid #f93f56;
+			border: 1px solid $primary-color;
 			border-radius: 5px;
 			cursor: pointer;
             input {
@@ -179,6 +180,8 @@ body {
         }
 		&__send {
 			flex: 0 1 200px;
+			justify-content: center;
+			align-items: center;
 			margin: 0 5px 0 5px;
 			button {				
 				display: block;
@@ -194,23 +197,28 @@ body {
 				font-weight: 500;
 				border-radius: 7px;
 				font-size: 14px;
-				text-align: center;
+				// text-align: center;
 				letter-spacing: .5px;
-				background-image: linear-gradient(to left,#f93e56 0,#fe6561 100%);
+				// background-image: linear-gradient(to left,#f93e56 0,#fe6561 100%);
+				background-color: $primary-color;
 				box-shadow: 0 2px 6px 0 rgb(50 50 50 / 16%);
+				&:hover {
+					background-color: $hover-color;
+				}
 				&::before {
 					content: '';
-					position: absolute;
-					display: block;
-					width: 30px;
-					height: 30px;
-					top: 50%;
-					transform: translateY(-50%);
-					right: 16px;
-					background-image: url('/img/arrow.svg');
-					background-size: 30px;
-					background-repeat: no-repeat;
-					background-position: 50% 50%;
+					// position: relative;
+					display: inline-block;
+					width: 16px;
+					height: 16px;
+					margin-right: 10px;
+					// top: 50%;
+					transform: translateY(2.5px);
+					left: 16px;
+					background-image: url('/img/send.svg');
+					// background-size: 30px;
+					// background-repeat: no-repeat;
+					// background-position: 50% 50%;
 				}
 			}
 		}
@@ -245,7 +253,7 @@ body {
 				fill: #e6e7ea;
 			}
 			path.red{
-				fill: #f93e56;
+				fill: $primary-color;
 			}
 		}
 		&__text {
